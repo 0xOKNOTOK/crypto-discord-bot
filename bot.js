@@ -30,9 +30,9 @@ bot.once('ready', () => {
 
 bot.on('message', async (message) => {
     if (message.content === '!linkmarine') {
-        getChainlinkMeme(message)
+        getChainlinkMeme(message);
     } else if (message.content.startsWith('!')) {
-        getCoinPrice(message)
+        getCoinPrice(message);
     }
 });
 
@@ -43,7 +43,7 @@ bot.on('message', async (message) => {
  */
 const getCoinPrice = (message) => {
     requestPrice(message.content, message);
-}
+};
 
 /**
  * Retrieve a random meme from the img Array.
@@ -52,7 +52,7 @@ const getChainlinkMeme = (message) => {
     message.channel.send({
         files: [imgSource[Math.floor(Math.random() * imgSource.length)]],
     });
-}
+};
 
 process.on('unhandledRejection', (error) => {
     console.error('Unhandled promise rejection:', error);
