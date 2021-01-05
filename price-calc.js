@@ -14,6 +14,9 @@ const requestPrice = async (coinID, message) => {
         `https://api.coingecko.com/api/v3/simple/price?ids=${coinID}&vs_currencies=btc`
     ).then((res) => res.text());
 
+    if (coinPriceBTC === '{}' || coinPriceUSD === '{}') {
+        return null;
+    }
     coinPriceBTC = JSON.parse(JSON.stringify(coinPriceBTC));
     coinPriceBTC = coinPriceBTC.replace(/[^0-9\.. ]/g, '').toUpperCase();
 
