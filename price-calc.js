@@ -18,7 +18,7 @@ const requestPrice = async (coinID, message) => {
     coinPriceBTC = coinPriceBTC.replace(/[^0-9\.. ]/g, '').toUpperCase();
 
     message.channel.send(
-        `**${coinID.toUpperCase()}/USD -> ${coinPriceUSD}\n${coinID.toUpperCase()}/BTC -> ${coinPriceBTC}***`
+        `**${coinID.toUpperCase()}/USD -> ${coinPriceUSD}\n${coinID.toUpperCase()}/BTC -> ${coinPriceBTC}**`
     );
 };
 
