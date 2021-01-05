@@ -30,9 +30,9 @@ bot.once('ready', () => {
 
 bot.on('message', async (message) => {
     if (message.content === '!linkmarine') {
-        getChainlinkMeme()
-    } else {
-        getCoinPrice(message, '!link')
+        getChainlinkMeme(message)
+    } else if (message.content.startsWith('!')) {
+        getCoinPrice(message)
     }
 });
 
@@ -41,18 +41,14 @@ bot.on('message', async (message) => {
  * @param message The message object parameter
  * @param coin The string the user has entered
  */
-const getCoinPrice = (message, coin) => {
-    if (message.content === coin) {
-        const coinID = message.content;
-
-        requestPrice(coinID, message);
-    }
+const getCoinPrice = (message) => {
+    requestPrice(message.content, message);
 }
 
 /**
  * Retrieve a random meme from the img Array.
  */
-const getChainlinkMeme = message => {
+const getChainlinkMeme = (message) => {
     message.channel.send({
         files: [imgSource[Math.floor(Math.random() * imgSource.length)]],
     });
