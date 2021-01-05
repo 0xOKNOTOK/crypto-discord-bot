@@ -2,6 +2,7 @@ require('dotenv').config();
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const requestPrice = require('./price-calc');
+
 const imgSource = [
     './img/1.jpg',
     './img/2.jpg',
@@ -99,6 +100,13 @@ bot.on('message', async (message) => {
 
 bot.on('message', async (message) => {
     if (message.content === '!vechain') {
+        let coinID = message.content;
+        requestPrice(coinID, message);
+    }
+});
+
+bot.on('message', async (message) => {
+    if (message.content === '!bitcoin') {
         let coinID = message.content;
         requestPrice(coinID, message);
     }
