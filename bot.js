@@ -29,96 +29,34 @@ bot.once('ready', () => {
 });
 
 bot.on('message', async (message) => {
-    if (message.content === '!link') {
-        let coinID = message.content;
-        requestPrice(coinID, message);
-    }
-});
-
-bot.on('message', async (message) => {
-    if (message.content === '!ripple') {
-        let coinID = message.content;
-        requestPrice(coinID, message);
-    }
-});
-
-bot.on('message', async (message) => {
-    if (message.content === '!ethereum') {
-        let coinID = message.content;
-        requestPrice(coinID, message);
-    }
-});
-
-bot.on('message', async (message) => {
-    if (message.content === '!dogecoin') {
-        let coinID = message.content;
-        requestPrice(coinID, message);
-    }
-});
-
-bot.on('message', async (message) => {
-    if (message.content === '!tether') {
-        let coinID = message.content;
-        requestPrice(coinID, message);
-    }
-});
-
-bot.on('message', async (message) => {
-    if (message.content === '!cardano') {
-        let coinID = message.content;
-        requestPrice(coinID, message);
-    }
-});
-
-bot.on('message', async (message) => {
-    if (message.content === '!litecoin') {
-        let coinID = message.content;
-        requestPrice(coinID, message);
-    }
-});
-
-bot.on('message', async (message) => {
-    if (message.content === '!polkadot') {
-        let coinID = message.content;
-        requestPrice(coinID, message);
-    }
-});
-
-bot.on('message', async (message) => {
-    if (message.content === '!monero') {
-        let coinID = message.content;
-        requestPrice(coinID, message);
-    }
-});
-
-bot.on('message', async (message) => {
-    if (message.content === '!stellar') {
-        let coinID = message.content;
-        requestPrice(coinID, message);
-    }
-});
-
-bot.on('message', async (message) => {
-    if (message.content === '!vechain') {
-        let coinID = message.content;
-        requestPrice(coinID, message);
-    }
-});
-
-bot.on('message', async (message) => {
-    if (message.content === '!bitcoin') {
-        let coinID = message.content;
-        requestPrice(coinID, message);
-    }
-});
-
-bot.on('message', async (message) => {
     if (message.content === '!linkmarine') {
-        message.channel.send({
-            files: [imgSource[Math.floor(Math.random() * imgSource.length)]],
-        });
+        getChainlinkMeme()
+    } else {
+        getCoinPrice(message, '!link')
     }
 });
+
+/**
+ * Get the coin price of the entered coin message.
+ * @param message The message object parameter
+ * @param coin The string the user has entered
+ */
+const getCoinPrice = (message, coin) => {
+    if (message.content === coin) {
+        const coinID = message.content;
+
+        requestPrice(coinID, message);
+    }
+}
+
+/**
+ * Retrieve a random meme from the img Array.
+ */
+const getChainlinkMeme = message => {
+    message.channel.send({
+        files: [imgSource[Math.floor(Math.random() * imgSource.length)]],
+    });
+}
 
 process.on('unhandledRejection', (error) => {
     console.error('Unhandled promise rejection:', error);
