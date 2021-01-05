@@ -30,84 +30,84 @@ bot.once('ready', () => {
 
 bot.on('message', async (message) => {
     if (message.content === '!link') {
-        let coinID = message.content;
+        const coinID = message.content;
         requestPrice(coinID, message);
     }
 });
 
 bot.on('message', async (message) => {
     if (message.content === '!ripple') {
-        let coinID = message.content;
+        const coinID = message.content;
         requestPrice(coinID, message);
     }
 });
 
 bot.on('message', async (message) => {
     if (message.content === '!ethereum') {
-        let coinID = message.content;
+        const coinID = message.content;
         requestPrice(coinID, message);
     }
 });
 
 bot.on('message', async (message) => {
     if (message.content === '!dogecoin') {
-        let coinID = message.content;
+        const coinID = message.content;
         requestPrice(coinID, message);
     }
 });
 
 bot.on('message', async (message) => {
     if (message.content === '!tether') {
-        let coinID = message.content;
+        const coinID = message.content;
         requestPrice(coinID, message);
     }
 });
 
 bot.on('message', async (message) => {
     if (message.content === '!cardano') {
-        let coinID = message.content;
+        const coinID = message.content;
         requestPrice(coinID, message);
     }
 });
 
 bot.on('message', async (message) => {
     if (message.content === '!litecoin') {
-        let coinID = message.content;
+        const coinID = message.content;
         requestPrice(coinID, message);
     }
 });
 
 bot.on('message', async (message) => {
     if (message.content === '!polkadot') {
-        let coinID = message.content;
+        const coinID = message.content;
         requestPrice(coinID, message);
     }
 });
 
 bot.on('message', async (message) => {
     if (message.content === '!monero') {
-        let coinID = message.content;
+        const coinID = message.content;
         requestPrice(coinID, message);
     }
 });
 
 bot.on('message', async (message) => {
     if (message.content === '!stellar') {
-        let coinID = message.content;
+        const coinID = message.content;
         requestPrice(coinID, message);
     }
 });
 
 bot.on('message', async (message) => {
     if (message.content === '!vechain') {
-        let coinID = message.content;
+        const coinID = message.content;
         requestPrice(coinID, message);
     }
 });
 
 bot.on('message', async (message) => {
     if (message.content === '!bitcoin') {
-        let coinID = message.content;
+        const coinID = message.content;
         requestPrice(coinID, message);
     }
 });
