@@ -33,6 +33,8 @@ bot.on('message', async (message) => {
         getChainlinkMeme(message);
     } else if (message.content.startsWith('!')) {
         getCoinPrice(message);
+    } else if (message.content === '!chainlick') {
+        message.channel.send(':chainlick:');
     }
 });
 
